@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trang web của tôi</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1d2330;--mut:#667085;--bd:#e3e6ec;--ac:#e5322d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171d;--card:#1e222b;--tx:#eceef2;--mut:#98a0b0;--bd:#2d3340}}
+:root[data-theme="dark"]{--bg:#14171d;--card:#1e222b;--tx:#eceef2;--mut:#98a0b0;--bd:#2d3340}
+html{color-scheme:light dark;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bgfull,var(--bg));background-attachment:fixed;color:var(--tx);font:16px/1.6 var(--ff,system-ui,sans-serif);min-height:100vh}
+.wrap{max-width:var(--w,1000px);margin:0 auto;padding:20px}
+header.hero{padding:40px 0 24px;text-align:var(--al,center)}
+header.hero h1{margin:0 0 8px;font-size:min(var(--ts,40px),9vw);color:var(--ac)}
+header.hero p{margin:0;color:var(--mut)}
+.grid{display:grid;gap:var(--gap,16px);grid-template-columns:repeat(var(--cols),1fr)}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:var(--bw,1px) solid var(--bd);border-radius:var(--r,14px);box-shadow:var(--sh,none);overflow:hidden}
+.card .body{padding:14px 16px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;white-space:pre-wrap;color:var(--mut)}
+.video{aspect-ratio:16/9;background:#000}
+.video iframe{width:100%;height:100%;border:0;display:block}
+.full{grid-column:1/-1}
+.vlink{display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:#111;color:#fff;text-decoration:none;text-align:center;font-weight:600}
+.vlink div{font-size:15px}.vlink:hover{background:var(--ac)}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 0}
+footer a{color:var(--mut)}
+button,input,select,textarea{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:8px 10px}
+textarea{width:100%;min-height:80px;resize:vertical}
+input[type=text],input[type=password],input[type=url],select{width:100%}
+button{cursor:pointer}
+button.pri{background:var(--ac);border-color:var(--ac);color:#fff}
+button.sm{padding:4px 9px;font-size:13px}
+label{display:block;font-size:13px;color:var(--mut);margin:10px 0 4px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:16px}
+.panel h2{margin:0 0 6px;font-size:18px}
+.item{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px solid var(--bd);border-radius:10px;padding:8px 10px;margin-top:8px}
+.item span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+.tag{font-size:11px;background:var(--ac);color:#fff;border-radius:6px;padding:1px 6px;margin-right:6px}
+.login{max-width:340px;margin:80px auto}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hint{font-size:12px;color:var(--mut);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script id="site-data" type="application/json">{"settings": {"title": "BIGC TOOL", "subtitle": "Chào mừng bạn đến với TOOL BIGC", "color": "#be2ee5", "cols": 2, "footer": "© Trang web của tôi", "embed": true, "t": {"ac": "#22d3ee", "font": "sans", "al": "center", "sh": "none", "bw": 1, "r": 6, "w": 1000, "gap": 16, "ts": 40, "bg": "#0b1220", "card": "#111c2e", "tx": "#e6f1ff", "bg2": "#0e2a47"}}, "blocks": [{"id": 1, "type": "text", "title": "Đây là web Hướng dẫ Full cách cài đặt tool BIGC", "full": true}, {"type": "video", "title": "Hướng dẫn cài Tool PC", "text": "", "url": "https://www.youtube.com/watch?v=p3SRB6tpOxE", "full": false, "id": 1794851085485}, {"type": "video", "title": "HD cài máy ảo có proxy", "text": "Mọi thắc mắc liên hệ lại với các AD trong nhóm", "url": "https://www.youtube.com/watch?v=2Xf8htwrX0k", "full": false, "id": 1794887715698}]}</script>
+<script>
+var KEY="mysite_v1";
+var def={settings:{title:"Trang web của tôi",subtitle:"Chào mừng bạn đến với trang web của tôi",color:"#e5322d",cols:2,footer:"© Trang web của tôi"},
+blocks:[{id:1,type:"text",title:"Giới thiệu",text:"Đây là trang web mẫu. Vào #admin để chỉnh sửa nội dung, thêm video YouTube và đổi bố cục.",full:true},
+{id:2,type:"video",title:"Video mẫu",text:"Mô tả ngắn cho video.",url:"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}]};
+var SRC="<!DOCTYPE html>\n"+document.documentElement.outerHTML;var S=load();var isOwner=false;var art=null;var editing=null;var pend=null;
+function toast(m,ok){var d=document.createElement("div");d.style.cssText="position:fixed;left:50%;top:16px;transform:translateX(-50%);background:"+(ok?"#067647":"#b42318")+";color:#fff;padding:10px 16px;border-radius:10px;z-index:99;max-width:90%";d.textContent=m;document.body.appendChild(d);setTimeout(function(){d.remove()},4500)}
+function load(){try{var r=localStorage.getItem(KEY);if(r){var x=JSON.parse(r);if(x&&x.settings&&x.blocks)return x}}catch(e){}try{var d=JSON.parse(document.getElementById("site-data").textContent);if(d&&d.settings&&d.blocks)return d}catch(e){}return JSON.parse(JSON.stringify(def))}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));toast("Đã lưu nháp. Bấm Tải file index.html mới rồi đưa lên hosting.",true)}catch(e){toast("Không lưu được trên trình duyệt này")}}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function ytId(u){if(!u)return null;var m=String(u).match(/(?:youtu\.be\/|v=|embed\/|shorts\/|live\/)([\w-]{11})/);if(m)return m[1];return /^[\w-]{11}$/.test(u.trim())?u.trim():null}
+function $(id){return document.getElementById(id)}
+function theme(){applyTheme()}
+var PRE={dark:{bg:"#0f1218",bg2:"",card:"#1a1f2a",tx:"#eef0f5",ac:"#7c5cff",r:16,sh:"soft",bw:1},light:{bg:"#ffffff",bg2:"",card:"#f6f7f9",tx:"#1d2330",ac:"#111111",r:8,sh:"none",bw:1},fun:{bg:"#fff3e0",bg2:"#ffd6f0",card:"#ffffff",tx:"#3a2150",ac:"#ff4f9a",r:28,sh:"strong",bw:0},tech:{bg:"#0b1220",bg2:"#0e2a47",card:"#111c2e",tx:"#e6f1ff",ac:"#22d3ee",r:6,sh:"none",bw:1}};
+function applyTheme(){var s=S.settings,t=s.t||{},st=document.documentElement.style;
+ st.setProperty("--ac",t.ac||s.color||"#e5322d");
+ if(t.bg){st.setProperty("--bg",t.bg);st.setProperty("--card",t.card||t.bg);st.setProperty("--tx",t.tx||"#222222");st.setProperty("--mut","color-mix(in srgb,var(--tx) 62%,var(--bg))");st.setProperty("--bd","color-mix(in srgb,var(--tx) 15%,var(--bg))");st.setProperty("--bgfull",t.bg2?"linear-gradient(135deg,"+t.bg+","+t.bg2+")":t.bg)}
+ else{["--bg","--card","--tx","--mut","--bd","--bgfull"].forEach(function(k){st.removeProperty(k)})}
+ var F={sans:'system-ui,-apple-system,"Segoe UI",Roboto,sans-serif',serif:'Georgia,"Times New Roman",serif',mono:'ui-monospace,Menlo,Consolas,monospace',round:'"Trebuchet MS","Comic Sans MS",system-ui,sans-serif'};
+ st.setProperty("--ff",F[t.font||"sans"]);st.setProperty("--w",(t.w||1000)+"px");st.setProperty("--gap",(t.gap==null?16:t.gap)+"px");st.setProperty("--ts",(t.ts||40)+"px");st.setProperty("--al",t.al||"center");st.setProperty("--r",(t.r==null?14:t.r)+"px");
+ st.setProperty("--sh",{none:"none",soft:"0 4px 16px rgba(0,0,0,.12)",strong:"0 10px 30px rgba(0,0,0,.25)"}[t.sh||"none"]);st.setProperty("--bw",(t.bw==null?1:t.bw)+"px")}
+function themePanel(){var t=S.settings.t||{};
+ var c=function(id,l,v){return '<div><label>'+l+'</label><input type="color" id="'+id+'" value="'+v+'" style="width:100%;height:40px;padding:2px"></div>'};
+ var rg=function(id,l,mn,mx,st,v){return '<div><label>'+l+': <b id="v_'+id+'"></b></label><input type="range" id="t_'+id+'" min="'+mn+'" max="'+mx+'" step="'+st+'" value="'+v+'" style="width:100%;padding:0"></div>'};
+ var h='<div class="panel"><h2>Giao diện</h2><div class="hint">Chỉnh là thấy ngay, nhớ bấm Lưu giao diện để giữ lại.</div><label>Mẫu có sẵn</label><div class="row">';
+ [["auto","Tự động sáng/tối"],["dark","Tối"],["light","Sáng"],["fun","Vui nhộn"],["tech","Công nghệ"]].forEach(function(p){h+='<button class="sm" data-p="'+p[0]+'">'+p[1]+'</button>'});
+ h+='</div><label><input type="checkbox" id="t_c"'+(t.bg?' checked':'')+'> Dùng màu tùy chỉnh</label><div class="cols2">'+c("t_bg","Màu nền",t.bg||"#f6f7f9")+c("t_card","Màu khung",t.card||"#ffffff")+c("t_tx","Màu chữ",t.tx||"#1d2330")+c("t_ac","Màu nhấn (tiêu đề, nút)",t.ac||S.settings.color||"#e5322d")+'</div><label><input type="checkbox" id="t_g"'+(t.bg2?' checked':'')+'> Nền gradient, màu thứ hai</label><input type="color" id="t_bg2" value="'+(t.bg2||"#ffffff")+'" style="width:100%;height:40px;padding:2px">';
+ h+='<div class="cols2">'+rg("r","Bo góc",0,40,1,t.r==null?14:t.r)+rg("w","Độ rộng trang",600,1400,20,t.w||1000)+rg("gap","Khoảng cách khung",0,48,2,t.gap==null?16:t.gap)+rg("ts","Cỡ tiêu đề",20,72,2,t.ts||40)+'</div>';
+ h+='<div class="cols2"><div><label>Phông chữ</label><select id="t_font"><option value="sans">Hiện đại</option><option value="serif">Có chân</option><option value="mono">Máy tính</option><option value="round">Tròn trịa</option></select></div><div><label>Căn tiêu đề</label><select id="t_al"><option value="center">Giữa</option><option value="left">Trái</option><option value="right">Phải</option></select></div><div><label>Đổ bóng</label><select id="t_sh"><option value="none">Không</option><option value="soft">Nhẹ</option><option value="strong">Đậm</option></select></div><div><label>Viền khung</label><select id="t_bw"><option value="0">Không</option><option value="1">Mảnh</option><option value="2">Dày</option></select></div></div>';
+ h+='<div class="row" style="margin-top:12px"><button class="pri" id="saveT">Lưu giao diện</button><button id="resetT">Đặt lại giao diện</button></div></div>';return h}
+function readTheme(){var g=function(i){return $(i).value},t={};
+ t.ac=g("t_ac");t.font=g("t_font");t.al=g("t_al");t.sh=g("t_sh");t.bw=+g("t_bw");t.r=+g("t_r");t.w=+g("t_w");t.gap=+g("t_gap");t.ts=+g("t_ts");
+ if($("t_c").checked){t.bg=g("t_bg");t.card=g("t_card");t.tx=g("t_tx");if($("t_g").checked)t.bg2=g("t_bg2")}
+ ["r","w","gap","ts"].forEach(function(k){$("v_"+k).textContent=t[k]});
+ S.settings.t=t;applyTheme()}
+function bindTheme(){var t=S.settings.t||{};
+ $("t_font").value=t.font||"sans";$("t_al").value=t.al||"center";$("t_sh").value=t.sh||"none";$("t_bw").value=String(t.bw==null?1:t.bw);
+ ["r","w","gap","ts"].forEach(function(k){$("v_"+k).textContent=$("t_"+k).value});
+ document.querySelectorAll('[id^="t_"]').forEach(function(el){el.addEventListener("input",readTheme);el.addEventListener("change",readTheme)});
+ document.querySelectorAll("[data-p]").forEach(function(b){b.onclick=function(){var p=b.dataset.p;if(p==="auto"){$("t_c").checked=false}else{var P=PRE[p];$("t_c").checked=true;$("t_bg").value=P.bg;$("t_card").value=P.card;$("t_tx").value=P.tx;$("t_ac").value=P.ac;$("t_g").checked=!!P.bg2;if(P.bg2)$("t_bg2").value=P.bg2;$("t_r").value=P.r;$("t_sh").value=P.sh;$("t_bw").value=String(P.bw)}readTheme()}});
+ $("saveT").onclick=function(){readTheme();save()};
+ $("resetT").onclick=function(){S.settings.t={};save();admin()}}
+
+
+function pub(){
+ theme();document.title=S.settings.title;
+ var h='<header class="hero"><h1>'+esc(S.settings.title)+'</h1><p>'+esc(S.settings.subtitle)+'</p></header>';
+ h+='<div class="grid" style="--cols:'+S.settings.cols+'">';
+ S.blocks.forEach(function(b){
+  var id=b.type==="video"?ytId(b.url):null;
+  h+='<div class="card'+(b.full?' full':'')+'">';
+  if(b.type==="video"){h+=id?(S.settings.embed?'<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/'+id+'" allowfullscreen loading="lazy" title="'+esc(b.title)+'"></iframe></div>':'<a class="vlink" href="https://www.youtube.com/watch?v='+id+'" target="_blank" rel="noopener"><div>▶<br>Xem video trên YouTube</div></a>'):'<div class="body"><p>Link YouTube không hợp lệ</p></div>'}
+  if(b.title||b.text){h+='<div class="body">'+(b.title?'<h3>'+esc(b.title)+'</h3>':'')+(b.text?'<p>'+esc(b.text)+'</p>':'')+'</div>'}
+  h+='</div>';
+ });
+ h+='</div><footer>'+esc(S.settings.footer)+'</footer>';
+ $("app").innerHTML=h;
+}
+
+function login(){
+ $("app").innerHTML='<div class="panel login"><h2>Đăng nhập quản trị</h2><label>Mật khẩu</label><input type="password" id="pw" autofocus><div class="row" style="margin-top:12px"><button class="pri" id="go">Đăng nhập</button><button id="back">Về trang chủ</button></div><div class="hint" id="msg">Mật khẩu mặc định: 1234 (hãy đổi sau khi vào)</div></div>';
+ function go(){if($("pw").value===S.settings.password){authed=true;admin()}else $("msg").textContent="Sai mật khẩu"}
+ $("go").onclick=go;$("pw").onkeydown=function(e){if(e.key==="Enter")go()};$("back").onclick=function(){location.hash=""};
+}
+
+function admin(){
+ if(!isOwner){location.hash="";return}
+ theme();var s=S.settings;
+ var h='<div class="row" style="justify-content:space-between;margin:10px 0 16px"><h1 style="margin:0;font-size:22px">Quản trị</h1><div class="row"><button id="view">Xem trang</button></div></div><div class="panel"><h2>Đăng lên hosting</h2><div class="hint">Sửa xong bấm Lưu, sau đó tải file mới và thay file index.html trên hosting của bạn. Người xem chỉ thấy nội dung khi file trên hosting được thay.</div><button class="pri" id="dl" style="margin-top:8px">Tải file index.html mới</button></div>';
+ h+='<div class="panel"><h2>Cài đặt chung</h2><label>Tiêu đề</label><input type="text" id="s_title" value="'+esc(s.title)+'"><label>Mô tả</label><input type="text" id="s_sub" value="'+esc(s.subtitle)+'"><div class="cols2"><div><label>Số cột bố cục</label><select id="s_cols"><option value="1">1 cột</option><option value="2">2 cột</option><option value="3">3 cột</option></select></div></div><label>Chân trang</label><input type="text" id="s_foot" value="'+esc(s.footer)+'"><label>Cách hiển thị video</label><select id="s_embed"><option value="0">Nút mở YouTube (luôn hoạt động)</option><option value="1">Nhúng trực tiếp (cần host riêng)</option></select><div style="margin-top:12px"><button class="pri" id="saveS">Lưu cài đặt</button></div></div>';h+=themePanel();
+ var e=editing!==null?S.blocks.filter(function(b){return b.id===editing})[0]:null;
+ e=e||{type:"video",title:"",text:"",url:"",full:false};
+ h+='<div class="panel"><h2>'+(editing!==null?'Sửa khối':'Thêm khối mới')+'</h2><div class="cols2"><div><label>Loại</label><select id="b_type"><option value="video">Video YouTube</option><option value="text">Văn bản</option></select></div><div><label>Chiếm cả hàng</label><select id="b_full"><option value="0">Không</option><option value="1">Có</option></select></div></div><div id="urlBox"><label>Link YouTube</label><input type="url" id="b_url" placeholder="https://www.youtube.com/watch?v=..." value="'+esc(e.url)+'"></div><label>Tiêu đề</label><input type="text" id="b_title" value="'+esc(e.title)+'"><label>Nội dung / mô tả</label><textarea id="b_text">'+esc(e.text)+'</textarea><div class="row" style="margin-top:12px"><button class="pri" id="saveB">'+(editing!==null?'Cập nhật':'Thêm khối')+'</button>'+(editing!==null?'<button id="cancel">Hủy</button>':'')+'</div><div class="hint" id="bmsg"></div></div>';
+ h+='<div class="panel"><h2>Danh sách khối ('+S.blocks.length+')</h2>';
+ S.blocks.forEach(function(b,i){h+='<div class="item"><span><span class="tag">'+(b.type==="video"?"VIDEO":"TEXT")+'</span>'+esc(b.title||b.url||"(không tiêu đề)")+'</span><div class="row"><button class="sm" data-a="up" data-i="'+i+'">↑</button><button class="sm" data-a="dn" data-i="'+i+'">↓</button><button class="sm" data-a="ed" data-i="'+b.id+'">Sửa</button><button class="sm" data-a="del" data-i="'+i+'">'+(pend===i?"Bấm lần nữa để xóa":"Xóa")+'</button></div></div>'});
+ h+='</div>';
+ h+='<div class="panel"><h2>Sao lưu / khôi phục</h2><div class="hint">Dữ liệu được lưu trong trình duyệt này. Sao chép đoạn dưới để sao lưu, hoặc dán dữ liệu cũ vào rồi bấm Khôi phục.</div><textarea id="bk" style="margin-top:8px;min-height:100px">'+esc(JSON.stringify(S))+'</textarea><div class="row" style="margin-top:8px"><button id="rest">Khôi phục</button><button id="reset">Đặt lại mặc định</button></div></div>';
+ $("app").innerHTML=h;
+ $("s_cols").value=String(s.cols);$("s_embed").value=s.embed?"1":"0";bindTheme();$("b_type").value=e.type;$("b_full").value=e.full?"1":"0";
+ function tg(){$("urlBox").style.display=$("b_type").value==="video"?"block":"none"}tg();$("b_type").onchange=tg;
+ $("view").onclick=function(){location.hash=""};$("dl").onclick=download;
+ $("saveS").onclick=function(){s.title=$("s_title").value;s.subtitle=$("s_sub").value;s.cols=+$("s_cols").value;s.footer=$("s_foot").value;s.embed=$("s_embed").value==="1";save();admin()};
+ $("saveB").onclick=function(){
+  var t=$("b_type").value,u=$("b_url").value.trim();
+  if(t==="video"&&!ytId(u)){$("bmsg").textContent="Link YouTube không hợp lệ";return}
+  var o={type:t,title:$("b_title").value,text:$("b_text").value,url:t==="video"?u:"",full:$("b_full").value==="1"};
+  if(editing!==null){S.blocks=S.blocks.map(function(b){return b.id===editing?Object.assign({id:b.id},o):b})}
+  else{o.id=Date.now();S.blocks.push(o)}
+  editing=null;save();admin();
+ };
+ if($("cancel"))$("cancel").onclick=function(){editing=null;admin()};
+ document.querySelectorAll("[data-a]").forEach(function(btn){btn.onclick=function(){
+  var a=btn.dataset.a,i=+btn.dataset.i;if(a!=="del")pend=null;
+  if(a==="up"&&i>0){var t=S.blocks[i];S.blocks[i]=S.blocks[i-1];S.blocks[i-1]=t}
+  if(a==="dn"&&i<S.blocks.length-1){var t2=S.blocks[i];S.blocks[i]=S.blocks[i+1];S.blocks[i+1]=t2}
+  if(a==="del"){if(pend!==i){pend=i;admin();return}S.blocks.splice(i,1);pend=null}
+  if(a==="ed"){editing=i;admin();window.scrollTo(0,0);return}
+  save();admin();
+ }});
+ $("rest").onclick=function(){try{var d=JSON.parse($("bk").value);if(!d.settings||!d.blocks)throw 0;S=d;save();admin()}catch(x){toast("Dữ liệu không hợp lệ")}};
+ $("reset").onclick=function(){if(!window._r){window._r=1;$("reset").textContent="Bấm lần nữa để xác nhận";return}S=JSON.parse(JSON.stringify(def));save();admin()};
+}
+
+function download(){var json=JSON.stringify(S).replace(/</g,"\\u003c");var out=SRC.replace(/(<script id="site-data" type="application\/json">)[\s\S]*?(<\/script>)/,function(m,x,y){return x+json+y});var b=new Blob([out],{type:"text/html"});var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="index.html";document.body.appendChild(a);a.click();a.remove()}
+function route(){if(location.hash==="#admin")admin();else pub()}
+window.addEventListener("hashchange",route);route();
+isOwner=true;route();
+</script></body></html>
